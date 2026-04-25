@@ -1,0 +1,144 @@
+.products-page {
+  padding: 100px 0 60px;
+  min-height: 100vh;
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(8, 16, 36, 0.7);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 35px 100px rgba(0, 0, 0, 0.34);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.08), transparent 18%);
+  pointer-events: none;
+}
+
+.product-card:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 45px 110px rgba(0, 0, 0, 0.36);
+  border-color: rgba(56, 189, 248, 0.32);
+  background: rgba(8, 16, 36, 0.78);
+}
+
+.product-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+.product-content {
+  position: relative;
+  padding: 32px;
+  z-index: 1;
+}
+
+.product-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--color-primary);
+}
+
+.product-description {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.product-highlights {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.product-highlights li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+  color: #cbd5e1;
+}
+
+.highlight-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* Color variations */
+.color-0 { border-top: 5px solid var(--color-primary); }
+.color-1 { border-top: 5px solid var(--color-primary); }
+.color-2 { border-top: 5px solid var(--color-primary); }
+.color-3 { border-top: 5px solid var(--color-primary); }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .products-page {
+    padding: 70px 0 30px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    margin-top: 40px;
+  }
+
+  .product-card {
+    border-radius: 24px;
+  }
+
+  .product-image {
+    height: 220px;
+  }
+
+  .product-content {
+    padding: 22px;
+  }
+
+  .product-title {
+    font-size: 1.3rem;
+  }
+
+  .product-description {
+    color: #cbd5e1;
+  }
+
+  .product-highlights li {
+    color: #cbd5e1;
+  }
+}
